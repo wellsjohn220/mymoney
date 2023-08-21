@@ -1,0 +1,22 @@
+https://git-scm.com/downloads
+git config --global user.name "wellsjohn"
+git config --global user.email wellsjohn220@gmail.ocm
+git config --list
+git config --global --add safe.directory E:/React2023/realtor-clone-react
+git config --global --add safe.directory G:/reactor-clone-react-mainad
+git status
+
+git init
+git add --all
+git status
+git commit -m "install react js and tailwind css template"
+git add .
+
+git remote add origin https://github.com/wellsjohn220/reactor-clone-react.git
+git branch -M main
+git push -u origin main                                 //use bash to push with login
+
+git config --global user.name wellsjohn220
+
+git remote remove origin
+git push -f origin main
