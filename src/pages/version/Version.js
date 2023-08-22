@@ -1,4 +1,4 @@
-import styles from './Version.module.css'
+// import styles from './Version.module.css'
 import { projectFirestore } from '../../firebase/config'
 import VersionList from '../../components/VersionList'
 import { useState, useEffect } from "react"

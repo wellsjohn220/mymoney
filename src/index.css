@@ -61,8 +61,3 @@ h2:hover {
 .content a {
   font-size: small;
 }
-.content p {
-  display:'flex';
-  flexDirection:'row';
-  alignItems:'center'
-}

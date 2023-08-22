@@ -15,7 +15,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  const { authIsReady, user } = useAuthContext();
+  const { user } = useAuthContext();
   return (
     <div className="App">
       <BrowserRouter>

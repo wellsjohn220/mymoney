@@ -1,4 +1,3 @@
-import styles from './About.module.css'
 import logo from './loading.png';
 
 export default function About() {

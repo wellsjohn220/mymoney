@@ -1,11 +1,10 @@
 import { useParams } from 'react-router-dom'
 import styles from './Edit.module.css'
-import React, { version } from 'react'
 import { useState, useEffect } from 'react'
-import updateDocument, { useFirestore } from '../../hooks/useFirestore.js'
+import { useFirestore } from '../../hooks/useFirestore.js'
 import { useHistory } from 'react-router-dom'
 import { projectFirestore } from '../../firebase/config'
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import { FaEdit} from 'react-icons/fa'
 
 export default function Edit() {
@@ -16,7 +15,7 @@ export default function Edit() {
   const [error, setError] = useState(null) 
   const { updateDocument, response } = useFirestore('versions') 
   const history = useHistory();
-  const style = { color:"black", fontSize: "1.5em" }
+  const style = { color:"black", fontSize: "1.5em"}
 
   const handleSubmit = async(e) => {
     e.preventDefault()
@@ -52,7 +51,7 @@ export default function Edit() {
     return (
         <form onSubmit={handleSubmit} className={styles['signup-form']}>
          {/* FaEdit */}
-         <p style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
+         <p style={{display:'flex', alignItems:'center'}}>
          <FaEdit style={style} />&nbsp;&nbsp;<h2>Version Edit</h2></p>
         <label>
           <span>Title:</span>

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import { projectFirestore } from '../../firebase/config'
 import { useHistory } from 'react-router-dom'
 import { toast } from "react-toastify";
