@@ -6,6 +6,7 @@ import updateDocument, { useFirestore } from '../../hooks/useFirestore.js'
 import { useHistory } from 'react-router-dom'
 import { projectFirestore } from '../../firebase/config'
 import { toast } from "react-toastify";
+import { FaEdit} from 'react-icons/fa'
 
 export default function Edit() {
   const { id } = useParams()  
@@ -15,6 +16,7 @@ export default function Edit() {
   const [error, setError] = useState(null) 
   const { updateDocument, response } = useFirestore('versions') 
   const history = useHistory();
+  const style = { color:"black", fontSize: "1.5em" }
 
   const handleSubmit = async(e) => {
     e.preventDefault()
@@ -49,7 +51,9 @@ export default function Edit() {
     
     return (
         <form onSubmit={handleSubmit} className={styles['signup-form']}>
-        <h2>Version Edit</h2>
+         {/* FaEdit */}
+         <p style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
+         <FaEdit style={style} />&nbsp;&nbsp;<h2>Version Edit</h2></p>
         <label>
           <span>Title:</span>
           <input 
