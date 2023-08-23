@@ -1,0 +1,14 @@
+.lodingtocenter {
+  text-align: center;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: 15% auto;
+  width: 15%;
+}
+@media screen and (max-width: 768px) {
+  .lodingtocenter {
+    margin: 45% auto;
+    width: 40%;
+  }
+}

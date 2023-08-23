@@ -38,8 +38,7 @@ export default function Edit() {
           setIsPending(false)
           console.log('Test: ' + doc.data().title)
           setTitle(doc.data().title)   
-          setComment(doc.data().comment)     
-         
+          setComment(doc.data().comment)         
        
         } else {
           setIsPending(false)

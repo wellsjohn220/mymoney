@@ -17,7 +17,7 @@ export default function Home() {
     <div className={styles.container}>
       <div className={styles.content}>
         <h3>Transaction list</h3>
-        {error && <p className='apperror'>{error}</p>}
+        {error && <p className='styles.apperror'>{error}</p>}
         {documents && <TransactionList transactions={documents} />} 
       </div>
       <div className={styles.sidebar}>

@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { useAuthContext } from "./hooks/useAuthContext";
+import { useState, useEffect } from "react";
 
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
@@ -11,19 +12,35 @@ import Recipe from "./pages/recipe/Recipe";
 import Create from "./pages/create/Create";
 import Edit from "./pages/edit/Edit";
 import Navbar from "./components/Navbar";
+
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import Spinner from "./components/Spinner";
+
 function App() {
+  const [loading, setLoading] = useState(true);
   const { user } = useAuthContext();
-  return (
-    <div className="App">
-      <BrowserRouter>
+  useEffect(() => {   
+    setTimeout(() => {       
+      setLoading(false);      
+   }, 900);  
+  }, [loading]);
+
+  if (loading) {    
+    console.log('load start... ' + loading);
+    return <Spinner />;    
+  }
+  
+  return (     
+    //console.log('load 2... ' + loading);
+    <div className="App">   
+        <BrowserRouter>   
         <Navbar />
-        <Switch>
-          <Route exact path="/">
+        <Switch>        
+          <Route exact path="/">         
             {!user && <Redirect to="/login" />}
-            {user && <Home />}
+            {user && <Home />}         
           </Route>
           <Route path="/version">
             <Version />
@@ -48,8 +65,11 @@ function App() {
             {user && user.displayName && <Redirect to="/" />}
             {!user && <Signup />}
           </Route>
+          
         </Switch>
+       
       </BrowserRouter>
+      
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -62,7 +82,8 @@ function App() {
         pauseOnHover
         theme="dark"
       />
-    </div>
+    
+    </div> 
   );
 }
 
