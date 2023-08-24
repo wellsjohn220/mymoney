@@ -21,15 +21,19 @@ import Spinner from "./components/Spinner";
 function App() {
   const [loading, setLoading] = useState(true);
   const { user } = useAuthContext();
-  useEffect(() => {   
-    setTimeout(() => {       
-      setLoading(false);      
-   }, 900);  
-  }, [loading]);
+  
+  function Loading(){
+    useEffect(() => {   
+      setTimeout(() => {       
+        setLoading(false);   console.log('load start... ' + loading);   
+     }, 1000);  
+    }, [loading]);
 
-  if (loading) {    
-    console.log('load start... ' + loading);
-    return <Spinner />;    
+    if (loading) {    
+      console.log('load start... ' + loading);
+      return <Spinner />;    
+    }
+    return null
   }
   
   return (     
@@ -37,6 +41,7 @@ function App() {
     <div className="App">   
         <BrowserRouter>   
         <Navbar />
+        <Loading />
         <Switch>        
           <Route exact path="/">         
             {!user && <Redirect to="/login" />}
