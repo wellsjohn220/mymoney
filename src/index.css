@@ -40,9 +40,7 @@ input {
 p.apperror {
   color: red;
 }
-h2:hover {
-  color:lime;
-}
+
 .version-list li {
   border: 1px solid white;
   box-sizing: border-box;

@@ -27,7 +27,7 @@ function App() {
       setTimeout(() => {       
         setLoading(false);   console.log('load start... ' + loading);   
      }, 1000);  
-    }, [loading]);
+    }, []);
 
     if (loading) {    
       console.log('load start... ' + loading);
@@ -37,7 +37,6 @@ function App() {
   }
   
   return (     
-    //console.log('load 2... ' + loading);
     <div className="App">   
         <BrowserRouter>   
         <Navbar />

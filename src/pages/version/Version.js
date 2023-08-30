@@ -32,7 +32,7 @@ export default function Version() {
     }, [])      
     return (        
         <div className='content'>
-            <h2>Version List&nbsp;  <Link to="/create">Create New Version</Link></h2><hr />
+            <h2>Version List&nbsp;  </h2><Link to="/create">Create New Version</Link><hr />
             {error && <p className="error">{error}</p>}
             {isPending && <p className="loading">Loading...</p>}
             {version && <VersionList versions={version} />}          

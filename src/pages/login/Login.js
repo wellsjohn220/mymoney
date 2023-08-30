@@ -17,10 +17,7 @@ export default function Login() {
     login(email, password)
   }
   return (
-    // <div className='content'>
-    //   <h3>Login</h3>
-    // </div>
-    <form onSubmit={handleSubmit} className={styles['login-form']}>
+   <form onSubmit={handleSubmit} className={styles['login-form']}>
       <p style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
         <FaExpeditedssl style={style} />&nbsp;&nbsp;<h2>Login</h2></p>
       <label>
